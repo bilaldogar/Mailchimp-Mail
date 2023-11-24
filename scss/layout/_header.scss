@@ -1,0 +1,186 @@
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 99;
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+
+	@include media('>=tablet') {
+		padding: 15px 0;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	.logo {
+		flex-shrink: 0;
+		margin: 0;
+		font-size: 24px;
+		line-height: 28px;
+
+		a {
+			color: #444;
+			position: relative;
+
+			&:after {
+				content: '';
+				display: inline-block;
+				vertical-align: bottom;
+				margin: 0 0 5px 3px;
+				width: 5px;
+				height: 5px;
+				border-radius: 50px;
+				background: #399cd6;
+			}
+		}
+
+		
+		@include media('>=desktop') {
+		}
+
+		img {
+			@include responsive-image;
+		}
+	}
+
+	.menu-holder {
+		flex-grow: 1;
+		position: fixed;
+		top: 56px;
+		bottom: 0;
+		right: 0;
+		padding: 20px;
+		overflow: auto;
+		width: 100%;
+		transform: translateX(100%);
+		transition: all 0.3s;
+		background: rgba(255,255,255,0.9);
+
+		@include media('>=tablet') {
+			position: static;
+			transform: none;
+			overflow: visible;
+			width: auto;
+			padding: 0;
+			border: 0;
+			transition: none;
+			background: none;
+		}
+
+		.nav-active & {
+			transform: translateX(0);
+		}
+	}
+
+	.main-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		font-size: 15px;
+		line-height: 18px;
+		font-weight: 600;
+		text-transform: capitalize;
+
+		@include media('>=tablet') {
+			display: flex;
+			gap: 20px;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		@include media('>=desktop') {
+			font-size: 17px;
+			line-height: 20px;
+		}
+
+		li {
+			padding: 0 0 15px;
+
+			@include media('>=tablet') {
+				padding: 0;
+			}
+		}
+
+		a {
+			display: block;
+			color: #444;
+			position: relative;
+
+			&:hover {
+				color: #399cd6;
+			}
+		}
+	}
+}
+
+.nav-opener{
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius:3px;
+  z-index: 9;
+	border: 0;
+	outline: none;
+	background: none;
+
+  @include media('>=tablet') {
+		display: none;
+    width: 40px;
+    height: 40px;
+  } 
+
+  &:before,
+  &:after,
+  span{
+    background: $black;
+    border-radius:4px;
+    position:absolute;
+    top:50%;
+    left:10%;
+    right:10%;
+    height:4px;
+    margin-top:-2px;
+    transition:all 0.2s linear;
+  }
+
+  &:before,
+  &:after{
+    content:'';
+    top:30%;
+  }
+
+  &:after {
+    top:70%;
+  }
+
+  .nav-active & { 
+  span {
+    opacity:0;
+  }
+
+  &:after,
+  &:before{
+    transform:rotate(45deg);
+    top:50%;
+    left:15%;
+    right:15%;
+  }
+
+  &:after{
+    transform:rotate(-45deg);
+  }
+
+  &:hover{
+    opacity:.9;
+    }
+  }
+}

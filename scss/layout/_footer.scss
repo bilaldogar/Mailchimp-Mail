@@ -1,0 +1,175 @@
+#footer {
+	position: relative;
+	padding: 30px 0;
+	font-size: 14px;
+	line-height: 18px;
+	background: #f4f4f4;
+
+	@include media('>=tablet') {
+		padding: 50px 0 30px;
+	}
+
+	.wrap {
+		margin: 0 0 20px;
+
+		@include media('>=tablet') {
+			display: flex;
+			gap: 10px;
+			margin: 0 0 30px;
+		}
+	}
+
+	.left-col {
+		width: 100%;
+		margin: 0 0 20px;
+
+		@include media('>=tablet') {
+			width: 350px;
+			margin: 0;
+		}
+	}
+
+	.text-box {
+		margin: 0 0 15px;
+	}
+
+	.footer-logo {
+		display: block;
+		margin: 0 0 10px;
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: 700;
+		font-family: $Oswald-font;
+		color: #212529;
+		position: relative;
+
+		&:after {
+			content: '';
+			display: inline-block;
+			vertical-align: bottom;
+			margin: 0 0 5px 3px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50px;
+			background: #399cd6;
+		}
+
+		img {
+			@include responsive-image;
+		}
+	}
+
+	.nav-wrap {
+		display: flex;
+		flex-flow: wrap;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-grow: 1;
+		gap: 30px;
+
+		@include media('>=tablet') {
+			flex-flow: nowrap;
+			justify-content: flex-end;
+			gap: 50px;
+		}
+
+		.box {
+			position: relative;
+		}
+
+		.title {
+			display: block;
+			font-size: 18px;
+			line-height: 22px;
+			font-weight: 500;
+			font-family: $Oswald-font;
+			text-transform: capitalize;
+			margin: 0 0 10px;
+		}
+	}
+	address {
+		font-style: normal;
+		margin: 0 0 10px;
+	}
+
+	.list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			margin: 0 0 5px;
+		}
+	}
+
+	.bottom-text {
+		text-align: center;
+		padding-top: 20px;
+		border-top: 1px solid #ccc;
+
+		.copyright {
+			display: block;
+			margin: 0 0 6px;
+		}
+
+		.tex {
+			display: block;
+		}
+
+		a {
+			color: #32353a;
+			font-weight: 600;
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+
+.footer-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin: 0 0 5px;
+	}
+
+	a {
+		color: #32353a;
+
+		&:hover {
+			color: $blue;
+		}
+	}
+}
+
+.socialnetworks {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	font-size: 20px;
+	line-height: 1;
+
+	li {
+		margin: 0;
+	}
+
+	a {
+		width: 40px;
+		height: 40px;
+		border-radius: 50px;
+		border: 1px solid #ddd;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 5px;
+		color: rgba(33, 37, 41,0.5);
+
+		&:hover {
+			color: $blue;
+			border-color: $blue;
+		}
+	}
+}
