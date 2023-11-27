@@ -2,6 +2,8 @@
 const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    document.getElementById('loader').style.display = 'block';
+
     try {
         // Get form data
         const formData = {
@@ -16,6 +18,9 @@ const handleFormSubmit = async (e) => {
 
     } catch (error) {
         ErrorDiv.innerText = 'Function is not Calling'
+    } finally {
+        // Hide loader regardless of success or error
+        document.getElementById('loader').style.display = 'none';
     }
 };
 
