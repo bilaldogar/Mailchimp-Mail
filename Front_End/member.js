@@ -33,6 +33,7 @@ const sendMailDummy = async (formData) => {
     SuccessDiv.innerText = "";
     ErrorDiv.style = "";
     SuccessDiv.style = "";
+
     try {
         const response = await fetch('http://localhost:3000/mailchimp-proxy', {
             method: 'POST',
@@ -54,7 +55,8 @@ const sendMailDummy = async (formData) => {
             //alert(result.message)
         }
     } catch (error) {
-        ErrorDiv.innerText = 'Something went Wrong'
+        ErrorDiv.innerText = 'Something went Wrong' 
+        ErrorDiv.style = "transition:0.4s; padding: 10px 15px; background:#fff; border: 1px solid #f50518 ;text-align: center; color: #f50518; border-radius: 10px"
         //alert("Something went Wrong")
     }
 }
