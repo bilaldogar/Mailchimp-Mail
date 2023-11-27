@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevCynx</title>
+  <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
   <link media="all" rel="stylesheet" href="../css/main.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -595,9 +596,8 @@
                 <textarea class="form-control" cols="30" rows="10" placeholder="Message" required id="messageInput"></textarea>
               </div>
               <div class="button-message">
-                <div>
-                  
-                  <span id="errorMessage" class="error"></span>
+                <div> 
+                 <span id="errorMessage" class="error"></span>
                  <span id="successMessage" class="success"></span>
              </div>
                 <div class="btn-holder">
@@ -605,8 +605,8 @@
                     Send Message
                   </button>
                 </div>
-           
               </div>
+              <div id = "loader" class = "loader"></div>
             </form>
 
           </div>
